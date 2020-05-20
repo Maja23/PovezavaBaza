@@ -6,9 +6,17 @@ using System.Threading.Tasks;
 
 namespace PovezavaBaza
 {
-    class Person
+    public class Person
     {
-        string sifdel;
-        string nazdel;
+        public string sifdel { get; set; }
+        public string nazdel { get; set; }
+        public string FullInfro
+        {
+            get 
+            {
+                // "14, Novak Tomas"
+                return $"{sifdel}, {nazdel}";
+            }
+        }
     }
 }
