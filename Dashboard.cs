@@ -14,13 +14,16 @@ namespace PovezavaBaza
     {
         List<Person> people = new List<Person>();
 
+        List<Person> peopleID = new List<Person>();
+
+        readonly DataAccess db = new DataAccess();
+
         public Dashboard()
         {
             InitializeComponent();
 
-            DataAccess db = new DataAccess();
-
-            people = db.GetPeople(nazDelText.Text); //pridobljen podatki iz baze
+            // za napolnjen combobox
+            people = db.GetPeople(); //pridobljen podatki iz baze
 
             foreach (Person a in people) //iz lista prepisem v combobox
             {
@@ -28,62 +31,35 @@ namespace PovezavaBaza
                 peopleComboBox.Items.Add(a.nazdel.ToString());
             }
 
-
-
             UpdateBinding();
-
-        }
-
-        private void Dashboard_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void UpdateBinding() //izpisi dejansko na UI
         {
-       /*     peopleListBox.DataSource = people;
-            peopleListBox.DisplayMember = "FullInfro";*/
-
-       /*     peopleComboBox.DataSource = people;
-            peopleComboBox.DisplayMember = "nazdel"; */
+            peopleListBox.DataSource = peopleID;
+            peopleListBox.DisplayMember = "FullInfro";
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DataAccess db = new DataAccess();
+          //  DataAccess db = new DataAccess();
 
-            people = db.GetPeople(nazDelText.Text); //pridobljen podatki iz baze
-
-            foreach (Person a in people) //iz lista prepisem v combobox
-            {
-
-                peopleComboBox.Items.Add(a.nazdel.ToString());
-            }
-            
+            peopleID = db.GetPeopleWithID(nazDelText.Text); //pridobljen podatki iz baze
 
             UpdateBinding();
-
-
-
-            
         }
 
-        private void potrdi_Click(object sender, EventArgs e)
-        {
+      private void potrdi_Click(object sender, EventArgs e) //samo za to da vem katerega je izbral za naprej
+       {
 
-            int selectedIndex = peopleComboBox.SelectedIndex;
+           int selectedIndex = peopleComboBox.SelectedIndex;
             Object selectedItem = peopleComboBox.SelectedItem;
-
-
-
-            /*     MessageBox.Show("Selected Item Text: " + selectedItem.ToString() + "\n" +
-                        "Index: " + selectedIndex.ToString());*/
 
             if (selectedIndex == -1)
                 MessageBox.Show("Izberi vrednost");
             else
-                MessageBox.Show("Selected Item Text: " + selectedItem.ToString());
+                MessageBox.Show("Selected Item Text: " + selectedItem.ToString()); 
 
         }
     }

@@ -101,7 +101,6 @@
             this.Controls.Add(this.peopleListBox);
             this.Name = "Dashboard";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Dashboard_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
