@@ -34,6 +34,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.peopleComboBox = new System.Windows.Forms.ComboBox();
             this.potrdi = new System.Windows.Forms.Button();
+            this.nextButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // peopleListBox
@@ -88,11 +89,22 @@
             this.potrdi.UseVisualStyleBackColor = true;
             this.potrdi.Click += new System.EventHandler(this.potrdi_Click);
             // 
+            // nextButton
+            // 
+            this.nextButton.Location = new System.Drawing.Point(713, 387);
+            this.nextButton.Name = "nextButton";
+            this.nextButton.Size = new System.Drawing.Size(75, 23);
+            this.nextButton.TabIndex = 6;
+            this.nextButton.Text = "Next";
+            this.nextButton.UseVisualStyleBackColor = true;
+            this.nextButton.Click += new System.EventHandler(this.nextButton_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.nextButton);
             this.Controls.Add(this.potrdi);
             this.Controls.Add(this.peopleComboBox);
             this.Controls.Add(this.button1);
@@ -114,6 +126,7 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox peopleComboBox;
         private System.Windows.Forms.Button potrdi;
+        private System.Windows.Forms.Button nextButton;
     }
 }
 

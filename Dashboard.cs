@@ -62,5 +62,14 @@ namespace PovezavaBaza
                 MessageBox.Show("Selected Item Text: " + selectedItem.ToString()); 
 
         }
+
+        private void nextButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            DelovniNalog dn = new DelovniNalog();
+            dn.ShowDialog();
+
+            this.Close();
+        }
     }
 }

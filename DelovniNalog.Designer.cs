@@ -35,6 +35,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.DN_textbox = new System.Windows.Forms.TextBox();
             this.DN_button = new System.Windows.Forms.Button();
+            this.sifra_listBox = new System.Windows.Forms.ListBox();
+            this.kodaKupca_listBox = new System.Windows.Forms.ListBox();
+            this.stKosov_listBox = new System.Windows.Forms.ListBox();
+            this.casCikla_listbox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // label1
@@ -86,7 +90,7 @@
             // 
             this.DN_textbox.Location = new System.Drawing.Point(209, 38);
             this.DN_textbox.Name = "DN_textbox";
-            this.DN_textbox.Size = new System.Drawing.Size(178, 20);
+            this.DN_textbox.Size = new System.Drawing.Size(180, 20);
             this.DN_textbox.TabIndex = 5;
             // 
             // DN_button
@@ -97,12 +101,49 @@
             this.DN_button.TabIndex = 6;
             this.DN_button.Text = "Prikaži";
             this.DN_button.UseVisualStyleBackColor = true;
+            this.DN_button.Click += new System.EventHandler(this.DN_button_Click);
+            // 
+            // sifra_listBox
+            // 
+            this.sifra_listBox.FormattingEnabled = true;
+            this.sifra_listBox.Location = new System.Drawing.Point(209, 71);
+            this.sifra_listBox.Name = "sifra_listBox";
+            this.sifra_listBox.Size = new System.Drawing.Size(180, 17);
+            this.sifra_listBox.TabIndex = 7;
+            // 
+            // kodaKupca_listBox
+            // 
+            this.kodaKupca_listBox.FormattingEnabled = true;
+            this.kodaKupca_listBox.Location = new System.Drawing.Point(209, 102);
+            this.kodaKupca_listBox.Name = "kodaKupca_listBox";
+            this.kodaKupca_listBox.Size = new System.Drawing.Size(180, 17);
+            this.kodaKupca_listBox.TabIndex = 8;
+            // 
+            // stKosov_listBox
+            // 
+            this.stKosov_listBox.FormattingEnabled = true;
+            this.stKosov_listBox.Location = new System.Drawing.Point(209, 139);
+            this.stKosov_listBox.Name = "stKosov_listBox";
+            this.stKosov_listBox.Size = new System.Drawing.Size(180, 17);
+            this.stKosov_listBox.TabIndex = 9;
+            // 
+            // casCikla_listbox
+            // 
+            this.casCikla_listbox.FormattingEnabled = true;
+            this.casCikla_listbox.Location = new System.Drawing.Point(209, 172);
+            this.casCikla_listbox.Name = "casCikla_listbox";
+            this.casCikla_listbox.Size = new System.Drawing.Size(180, 17);
+            this.casCikla_listbox.TabIndex = 10;
             // 
             // DelovniNalog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.casCikla_listbox);
+            this.Controls.Add(this.stKosov_listBox);
+            this.Controls.Add(this.kodaKupca_listBox);
+            this.Controls.Add(this.sifra_listBox);
             this.Controls.Add(this.DN_button);
             this.Controls.Add(this.DN_textbox);
             this.Controls.Add(this.label5);
@@ -126,5 +167,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox DN_textbox;
         private System.Windows.Forms.Button DN_button;
+        private System.Windows.Forms.ListBox sifra_listBox;
+        private System.Windows.Forms.ListBox kodaKupca_listBox;
+        private System.Windows.Forms.ListBox stKosov_listBox;
+        private System.Windows.Forms.ListBox casCikla_listbox;
     }
 }
