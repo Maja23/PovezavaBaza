@@ -150,7 +150,8 @@ namespace PovezavaBaza
                                WHERE nal_gl.STEVILKA = @STEVILKA";
 
                 var nalog = connection.Query(sql, p);
-                
+
+                string neke = nalog.ToString();
 
             
             }

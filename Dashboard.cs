@@ -28,7 +28,7 @@ namespace PovezavaBaza
             foreach (Person a in people) //iz lista prepisem v combobox
             {
 
-                peopleComboBox.Items.Add(a.nazdel.ToString());
+                peopleComboBox.Items.Add(a.FullInfro.ToString());
             }
 
             UpdateBinding();

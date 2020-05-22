@@ -15,7 +15,7 @@ namespace PovezavaBaza
             get 
             {
                 // "14, Novak Tomas"
-                return $"{sifdel}, {nazdel}";
+                return $"{sifdel}. {nazdel}";
             }
         }
     }
