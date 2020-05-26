@@ -27,7 +27,7 @@ namespace PovezavaBaza.Models
         {
             get
             {
-                return $"{TEZAMETERIAL}, {dan}";
+                return $"{STEVILKA}: {SIFRAOPERACIJE} => {OPIS}";
             }
         }
 

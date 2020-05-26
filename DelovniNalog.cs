@@ -35,8 +35,8 @@ namespace PovezavaBaza
 
         private void UpdateBinding() //izpisi dejansko na UI
         {
-            podatkiListBox.DataSource = sestavnica;
-            podatkiListBox.DisplayMember = "FullInfro";
+            podatkiListBox.DataSource = Tehnoloski_potopki_POS;
+            //podatkiListBox.DisplayMember = "FullInfro";
 
         }
 
@@ -50,8 +50,11 @@ namespace PovezavaBaza
 
         private void podatkiButton_Click(object sender, EventArgs e)
         {
-            sestavnica = db.SestavnicaOperacija();
+            string a= db.TehnoloskiPostopkiOPERACIJA("5");
 
+    //        podatkiListBox.Text = a.ToString();
+
+            MessageBox.Show(a);
             UpdateBinding();
         }
 

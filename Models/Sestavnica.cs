@@ -35,7 +35,13 @@ namespace PovezavaBaza.Models
             get
             {
                 // "14, Novak Tomas"
-                return $"{ID}, {SIFRABLAGA}, {PODSIFRA}";
+                return $"{ID}, {SIFRABLAGA}, {PODSIFRA} \n" +
+                    $"{KOLICINA}, {KALO}, {FAKTOR} \n" +
+                    $"{FORMULA}, {VARIANTAK}, {NAZIVN} \n" +
+                    $"{ENOTAN}, {OPOMBAN}, {STNDARDN} \n" +
+                    $"{ZAPSTN}, {KOLICINA2}, {KONCAN} \n" +
+                    $"{DAN}, {DAN2}, {STROSEK1} \n" +
+                    $"{STROSEK2}, {KALKCENA}, {SKLADN}\n\n";
             }
         }
     }

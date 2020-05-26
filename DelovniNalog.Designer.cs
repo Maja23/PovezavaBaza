@@ -141,9 +141,9 @@
             // podatkiListBox
             // 
             this.podatkiListBox.FormattingEnabled = true;
-            this.podatkiListBox.Location = new System.Drawing.Point(409, 17);
+            this.podatkiListBox.Location = new System.Drawing.Point(395, 17);
             this.podatkiListBox.Name = "podatkiListBox";
-            this.podatkiListBox.Size = new System.Drawing.Size(646, 355);
+            this.podatkiListBox.Size = new System.Drawing.Size(1190, 329);
             this.podatkiListBox.TabIndex = 11;
             // 
             // podatkiButton

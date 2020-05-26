@@ -80,6 +80,35 @@ namespace PovezavaBaza
             }
         }
 
+        public string TehnoloskiPostopkiOPERACIJA(string input) //ne dela
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("SampleDB")))
+            {
+
+                //    var output = connection.Query($"SELECT SIFRAOPERACIJE, OPIS FROM TEHNOLOSKI_POSTOPKI_POS WHERE STEVILKA = @STEVILKA");
+
+                var p = new
+                {
+                    stevilka = input
+                };
+
+                string sql = "select * from dbo.TEHNOLOSKI_POSTOPKI_POS where STEVILKA = 522";
+
+                var people = connection.Query<TehnoloskiPostopkiPOS>(sql, p);
+
+
+                string a = "";
+                foreach (var person in people)
+                {
+                    a =  person.SIFRAOPERACIJE + person.OPIS+ "\n" + a;
+                }
+
+                return a;
+
+            }
+        }
+        
+
         public List<SifraOperacije> SifraOperacije()
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("SampleDB")))
@@ -156,7 +185,6 @@ namespace PovezavaBaza
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("SampleDB")))
             {
-
                 var p = new
                 {
                     STEVILKA = Stevilka
@@ -173,6 +201,30 @@ namespace PovezavaBaza
                 string neke = nalog.ToString();
 
             
+            }
+        }
+
+
+        public void OperacijePoStevilkiNaloga(string Stevilka)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("SampleDB")))
+            {
+                var p = new
+                {
+                    STEVILKA = Stevilka
+                };
+
+                string sql = @"SELECT nal_gl.*, nal_pos.*
+                               FROM dbo.Nalog_Glava nal_gl
+                               LEFT JOIN dbo.Nalog_POstavke nal_pos
+                                    ON  nal_gl.STEVILKA = nal_pos.STEVILKA
+                               WHERE nal_gl.STEVILKA = @STEVILKA";
+
+                var nalog = connection.Query(sql, p);
+
+                string neke = nalog.ToString();
+
+
             }
         }
     }
