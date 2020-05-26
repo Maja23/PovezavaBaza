@@ -71,5 +71,10 @@ namespace PovezavaBaza
 
             this.Close();
         }
+
+        private void peopleComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

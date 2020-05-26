@@ -78,6 +78,7 @@
             this.peopleComboBox.Name = "peopleComboBox";
             this.peopleComboBox.Size = new System.Drawing.Size(282, 21);
             this.peopleComboBox.TabIndex = 4;
+            this.peopleComboBox.SelectedIndexChanged += new System.EventHandler(this.peopleComboBox_SelectedIndexChanged);
             // 
             // potrdi
             // 

@@ -19,6 +19,8 @@ namespace PovezavaBaza
         List<TehnoloskiPostopkiPOS> Tehnoloski_potopki_POS = new List<TehnoloskiPostopkiPOS>();
         List<TehnoloskiPostopki> Tehnoloski_potopki = new List<TehnoloskiPostopki>();
 
+        List<Sestavnica> sestavnica = new List<Sestavnica>();
+
 
 
         readonly DataAccess db = new DataAccess();
@@ -33,7 +35,7 @@ namespace PovezavaBaza
 
         private void UpdateBinding() //izpisi dejansko na UI
         {
-            podatkiListBox.DataSource = Tehnoloski_potopki;
+            podatkiListBox.DataSource = sestavnica;
             podatkiListBox.DisplayMember = "FullInfro";
 
         }
@@ -48,7 +50,7 @@ namespace PovezavaBaza
 
         private void podatkiButton_Click(object sender, EventArgs e)
         {
-            Tehnoloski_potopki = db.TehnoloskiPostopki();
+            sestavnica = db.SestavnicaOperacija();
 
             UpdateBinding();
         }

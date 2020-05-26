@@ -68,7 +68,9 @@
     <Compile Include="Models\NalogPostavke.cs" />
     <Compile Include="Models\Person.cs" />
     <Compile Include="Models\Rezultat.cs" />
+    <Compile Include="Models\Sestavnica.cs" />
     <Compile Include="Models\SifraArtikli.cs" />
+    <Compile Include="Models\SifraOperacije.cs" />
     <Compile Include="Models\TehnoloskiPostopki.cs" />
     <Compile Include="Models\TehnoloskiPostopkiPOS.cs" />
     <Compile Include="Program.cs" />

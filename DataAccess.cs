@@ -80,6 +80,25 @@ namespace PovezavaBaza
             }
         }
 
+        public List<SifraOperacije> SifraOperacije()
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("SampleDB")))
+            {
+                var output = connection.Query<SifraOperacije>($"select * from dbo.Sif_Operacije").ToList();
+                return output;
+            }
+        }
+        public List<Sestavnica> SestavnicaOperacija()
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("SampleDB")))
+            {
+                var output = connection.Query<Sestavnica>($"select * from dbo.Sif_Sestavnce").ToList();
+                return output;
+            }
+        }
+
+
+
         /*    private static void BasicRead()
             {
                 using (IDbConnection cnn = new SqlConnection(GetConnectionString()))
@@ -111,27 +130,27 @@ namespace PovezavaBaza
             }
         */
 
-       /* public string ReadWithParameters(string STEVILKA) //branje podatkov glede na stevilo naloga iz baze nalog_glava
-        {
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("SampleDB")))
-            {
-                var p = new DynamicParameters();
-                p.Add("@STEVILKA", STEVILKA);
+        /* public string ReadWithParameters(string STEVILKA) //branje podatkov glede na stevilo naloga iz baze nalog_glava
+         {
+             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("SampleDB")))
+             {
+                 var p = new DynamicParameters();
+                 p.Add("@STEVILKA", STEVILKA);
 
-                string sql = "select sTRANKA from dbo.Nalog_Glava where STEVILKA = @STEVILKA";
+                 string sql = "select sTRANKA from dbo.Nalog_Glava where STEVILKA = @STEVILKA";
 
-                var nalog_glava = connection.Query(sql, p); //brez nalogpostavke
+                 var nalog_glava = connection.Query(sql, p); //brez nalogpostavke
 
-                string a = "";
+                 string a = "";
 
-                foreach (var nalog in nalog_glava)
-                {
-                    a = nalog.sTRANKA + a;
-                }
+                 foreach (var nalog in nalog_glava)
+                 {
+                     a = nalog.sTRANKA + a;
+                 }
 
-                return a;
-            }
-        }*/
+                 return a;
+             }
+         }*/
 
         public void SifraBlaga(string Stevilka)
         {
